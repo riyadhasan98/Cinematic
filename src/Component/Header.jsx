@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 import "./header.css";
 
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
+import Reveal from "../animation/Reveal";
 
 export default function Header() {
   return (
@@ -73,96 +74,101 @@ export default function Header() {
                 }}
               >
                 <div className="cus-container">
-                  <div className="space-y-4 md:space-y-8 relative top-12 md:top-28">
-                    {/* most viewed */}
-                    <div className="flex space-x-2">
-                      <div className="w-[2px] h-8 bg-[#FF3434]"></div>
-                      <h2 className="text-[18px] font-bold text-white">
-                        MOST VIEWED
-                      </h2>
-                    </div>
-                    {/* movie name */}
-                    <div>
-                      <h1 className="text-[28px] md:text-[36px] lg:text-[56px] font-bold text-white">
-                        {title}
-                      </h1>
-                    </div>
-                    {/* rating duration  */}
-                    <div className="flex space-x-3 items-center md:space-x-8">
-                      <div className="relative">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="40"
-                          height="40"
-                          viewBox="0 0 33 33"
-                          fill="none"
-                        >
-                          <circle
-                            cx="16.5"
-                            cy="16.5"
-                            r="15.5"
-                            stroke="white"
-                            stroke-width="1"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M0 16.5C0 25.6127 7.3873 33 16.5 33C25.6127 33 33 25.6127 33 16.5C33 7.3873 25.6127 0 16.5 0C13.3843 0 10.4703 0.863584 7.98429 2.36445L9.06646 4.04782C11.2402 2.7474 13.7828 2 16.5 2C24.5081 2 31 8.49187 31 16.5C31 24.5081 24.5081 31 16.5 31C8.49187 31 2 24.5081 2 16.5H0Z"
-                            fill="#FF3434"
-                          />
-                        </svg>
-                        <h2 className="font-bold text-white absolute top-2 left-2">
-                          {rating}
+                  <Reveal>
+                    <div className="space-y-4 md:space-y-8 relative top-12 md:top-28">
+                      {/* most viewed */}
+                      <div className="flex space-x-2">
+                        <div className="w-[2px] h-8 bg-[#FF3434]"></div>
+                        <h2 className="text-[18px] font-bold text-white">
+                          MOST VIEWED
                         </h2>
                       </div>
-                      <div className="max-sm:w-12">
-                        <img src={imdb} alt="" />
+                      {/* movie name */}
+                      <div>
+                        <h1 className="text-[28px] md:text-[36px] lg:text-[56px] font-bold text-white">
+                          {title}
+                        </h1>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-[10px] h-[10px] bg-white rounded-full"></div>
-                        <h2 className="font-semibold text-white">{duration}</h2>
+                      {/* rating duration  */}
+                      <div className="flex space-x-3 items-center md:space-x-8">
+                        <div className="relative">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 33 33"
+                            fill="none"
+                          >
+                            <circle
+                              cx="16.5"
+                              cy="16.5"
+                              r="15.5"
+                              stroke="white"
+                              stroke-width="1"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M0 16.5C0 25.6127 7.3873 33 16.5 33C25.6127 33 33 25.6127 33 16.5C33 7.3873 25.6127 0 16.5 0C13.3843 0 10.4703 0.863584 7.98429 2.36445L9.06646 4.04782C11.2402 2.7474 13.7828 2 16.5 2C24.5081 2 31 8.49187 31 16.5C31 24.5081 24.5081 31 16.5 31C8.49187 31 2 24.5081 2 16.5H0Z"
+                              fill="#FF3434"
+                            />
+                          </svg>
+                          <h2 className="font-bold text-white absolute top-2 left-2">
+                            {rating}
+                          </h2>
+                        </div>
+                        <div className="max-sm:w-12">
+                          <img src={imdb} alt="" />
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-[10px] h-[10px] bg-white rounded-full"></div>
+                          <h2 className="font-semibold text-white">
+                            {duration}
+                          </h2>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-[10px] h-[10px] bg-white rounded-full"></div>
+                          <h2 className="font-semibold text-white">{year}</h2>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-[10px] h-[10px] bg-white rounded-full"></div>
+                          <button className="bg-[#FF3434] text-white py-[2px] px-2 rounded-[3px]">
+                            Action
+                          </button>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-[10px] h-[10px] bg-white rounded-full"></div>
-                        <h2 className="font-semibold text-white">{year}</h2>
+                      {/* description    */}
+                      <div>
+                        <p className=" text-white w-[500px]">
+                          Excepteur sint occaecat cupidatat non proident, sunt
+                          in culpa qui officia deserunt mollit anim id est
+                          laborum."
+                        </p>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-[10px] h-[10px] bg-white rounded-full"></div>
-                        <button className="bg-[#FF3434] text-white py-[2px] px-2 rounded-[3px]">
-                          Action
+                      {/* cast genre tags */}
+                      <div className="space-y-2">
+                        <p className="text-white text-[14px]">
+                          <span className="text-red-500">Cast</span> Anna
+                          Romanson, Robert Romansos
+                        </p>
+                        <p className="text-white text-[14px]">
+                          <span className="text-red-500">Genre</span> Action,
+                          Thriller, Romance
+                        </p>
+                        <p className="text-white text-[14px]">
+                          <span className="text-red-500">Tags</span> 4K Ultra,
+                          Thriller, Dubbing
+                        </p>
+                      </div>
+                      {/* play button  */}
+                      <div className="flex bg-[#FF3434] w-fit space-x-2 py-3 px-4 rounded-[5px]">
+                        <img src={play} alt="" />
+                        <button className="text-white font-medium">
+                          Play Now
                         </button>
                       </div>
                     </div>
-                    {/* description    */}
-                    <div>
-                      <p className=" text-white w-[500px]">
-                        Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum."
-                      </p>
-                    </div>
-                    {/* cast genre tags */}
-                    <div className="space-y-2">
-                      <p className="text-white text-[14px]">
-                        <span className="text-red-500">Cast</span> Anna
-                        Romanson, Robert Romansos
-                      </p>
-                      <p className="text-white text-[14px]">
-                        <span className="text-red-500">Genre</span> Action,
-                        Thriller, Romance
-                      </p>
-                      <p className="text-white text-[14px]">
-                        <span className="text-red-500">Tags</span> 4K Ultra,
-                        Thriller, Dubbing
-                      </p>
-                    </div>
-                    {/* play button  */}
-                    <div className="flex bg-[#FF3434] w-fit space-x-2 py-3 px-4 rounded-[5px]">
-                      <img src={play} alt="" />
-                      <button className="text-white font-medium">
-                        Play Now
-                      </button>
-                    </div>
-                  </div>
+                  </Reveal>
                 </div>
               </section>
             </SwiperSlide>

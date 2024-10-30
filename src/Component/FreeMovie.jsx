@@ -15,21 +15,25 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Reveal from "../animation/Reveal";
 
-function freeMovie() {
+function FreeMovie() {
   return (
     <>
       <div className="cus-container">
-        <div className="flex justify-between items-center mt-20">
-          <h1 className="text[26px] md:[36px] lg:text-[48px] font-bold text-white">
-            Watch For Free: Movie Mania
-          </h1>
-          <button className="bg-[#FF3434] text-white py-1 px-2 md:py-3 md:px-7 rounded-[5px]">
-            View All
-          </button>
-        </div>
-              <Swiper
-                  speed={1000}
+ 
+          <div className="flex justify-between items-center mt-20">
+            <h1 className="text[26px] md:[36px] lg:text-[48px] font-bold text-white">
+              Watch For Free: Movie Mania
+            </h1>
+            <button className="bg-[#FF3434] text-white py-1 px-2 md:py-3 md:px-7 rounded-[5px]">
+              View All
+            </button>
+          </div>
+     
+
+        <Swiper
+          speed={1000}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
@@ -173,6 +177,7 @@ function freeMovie() {
           })}
         </Swiper>
       </div>
+
       <div className="flex justify-between mx-[15px] md:mx-4 lg:mx-12 2xl:mx-20 relative bottom-[350px] md:bottom-[370px] z-20">
         <div className="button-prev-slide-free bg-white w-fit md:p-3 rounded-full bg-opacity-10 hover:bg-opacity-30">
           <img src={leftArrow} alt="" />
@@ -185,4 +190,4 @@ function freeMovie() {
   );
 }
 
-export default freeMovie;
+export default FreeMovie;
