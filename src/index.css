@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+body {
+  background-color: #0A0E17;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  .cus-container {
+    @apply container max-w-[90rem] px-[15px] md:px-[80px] lg:px-[135px] mx-auto;
+  }
+  .grid-res-cols {
+    @apply grid grid-cols-4 items-center justify-between md:grid-cols-8 lg:grid-cols-12;
+  }
+  /* / If number of card is 2 / */
+  .grid-card-2 {
+    @apply col-span-4 lg:col-span-6;
+  }
+  /* / If number of card is 3 / */
+  .grid-card-3 {
+    @apply col-span-4 lg:col-span-4;
+  }
+  /* / If number of card is 4 / */
+  .grid-card-4 {
+    @apply col-span-4 lg:col-span-3;
+  }
+}
